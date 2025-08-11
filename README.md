@@ -1,73 +1,24 @@
-# Welcome to your Lovable project
+# Build & Deploy (Next.js on Vercel)
 
-## Project info
+This repo contains a Next.js app under `modern-website/`. Root npm scripts proxy to that app.
 
-**URL**: https://lovable.dev/projects/242630b6-4f92-453b-9f47-d40a3b93a501
+## Requirements
 
-## How can I edit this code?
+- Node 20.x
+- npm (package-lock.json is the lock source of truth)
 
-There are several ways of editing your application.
+## Commands
 
-**Use Lovable**
+- Development: `npm run dev`
+- Production build: `npm run build`
+- Serve production: `npm run start`
+- Vercel production build (local): `npm run vercel:build`
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/242630b6-4f92-453b-9f47-d40a3b93a501) and start prompting.
+## Environment Flags
 
-Changes made via Lovable will be committed automatically to this repo.
+- `CI_LOOSE=1` to ignore ESLint/TypeScript build errors (use sparingly in CI).
+- `ENABLE_SERVER_ACTIONS=1` to enable serverActions experimental block.
 
-**Use your preferred IDE**
+## Images
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/242630b6-4f92-453b-9f47-d40a3b93a501) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Remote HTTPS images are allowed by default via `images.remotePatterns`. Tighten as needed.

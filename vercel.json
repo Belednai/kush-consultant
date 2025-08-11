@@ -1,7 +1,9 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite"
+  "framework": "nextjs",
+  "git": { "enabled": true },
+  "installCommand": "npm i",
+  "outputDirectory": "modern-website/.next"
 }
 
 
