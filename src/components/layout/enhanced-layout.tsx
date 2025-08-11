@@ -406,7 +406,7 @@ export function EnhancedLayout({ children }: EnhancedLayoutProps) {
               >
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-4 w-4 text-green-500 fill-green-500" />
                   ))}
                 </div>
                 

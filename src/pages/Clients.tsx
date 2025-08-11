@@ -455,7 +455,7 @@ const Clients = () => {
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star 
                             key={i} 
-                            className="h-5 w-5 text-white fill-current transition-transform hover:scale-110" 
+                            className="h-5 w-5 text-green-500 fill-green-500 transition-transform hover:scale-110" 
                             style={{ animationDelay: `${i * 0.1}s` }}
                           />
                         ))}
@@ -483,7 +483,7 @@ const Clients = () => {
                 <span>Verified Reviews</span>
               </div>
               <div className="flex items-center">
-                <Star className="w-4 h-4 mr-2 text-white fill-current" />
+                <Star className="w-4 h-4 mr-2 text-green-500 fill-green-500" />
                 <span>5.0 Average Rating</span>
               </div>
               <div className="flex items-center">

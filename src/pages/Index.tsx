@@ -452,7 +452,7 @@ const Index = () => {
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-4 w-4 text-green-500 fill-green-500" />
                     ))}
                   </div>
                   <CardTitle className="text-lg">{testimonial.name}</CardTitle>
@@ -690,11 +690,12 @@ const Index = () => {
             </Card>
           </div>
           
-          <div className="text-center mt-12">
-            <Link to="/contact" className="btn-primary mr-4 inline-flex items-center">
+          {/* CTA buttons: stack with spacing on small screens, inline on md+ */}
+          <div className="mt-12 text-center flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link to="/contact" className="btn-primary inline-flex items-center">
               Schedule Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link to="/contact" className="btn-primary inline-flex items-center mt-3 sm:mt-0">
+            <Link to="/contact" className="btn-primary inline-flex items-center">
               Get Quote <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
