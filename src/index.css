@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --brand-foreground: 210 40% 98%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 143 56% 23%;
+
+    --radius: 0.75rem;
+
+    --shadow-soft: 0 2px 4px rgba(36, 84, 60, 0.1);
+    --shadow-medium: 0 4px 6px rgba(36, 84, 60, 0.1);
+    --shadow-large: 0 10px 15px rgba(36, 84, 60, 0.1);
+
+    --gradient-hero: linear-gradient(135deg, rgba(36, 84, 60, 0.1), rgba(36, 84, 60, 0.05));
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75));
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --gradient-hero: linear-gradient(135deg, rgba(36, 84, 60, 0.2), rgba(36, 84, 60, 0.1));
+    --gradient-card: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Professional gradient buttons */
+  .btn-primary {
+    @apply bg-gradient-primary text-white hover:bg-gradient-primary-hover;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    @apply shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Card with subtle gradient */
+  .card-gradient {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-soft);
+    @apply border border-border/20;
+  }
+
+  /* Enhanced hover animations with better accessibility */
+  .hover-lift {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus-within:shadow-lg focus-within:-translate-y-1;
+  }
+
+  /* Interactive card hover states */
+  .card-interactive {
+    @apply card-gradient hover-lift cursor-pointer;
+    @apply transform-gpu will-change-transform;
+    @apply hover:border-primary/20 focus-within:border-primary/30;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  /* Achievement pulse animation */
+  .achievement-pulse {
+    @apply relative overflow-hidden;
+  }
+  
+  .achievement-pulse::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent;
+    @apply -translate-x-full;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Testimonial card with enhanced styling */
+  .testimonial-card {
+    @apply relative overflow-hidden;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Floating elements for visual interest */
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Micro-interaction for client logos */
+  .client-logo-hover {
+    @apply transition-all duration-300 hover:scale-110 hover:brightness-110;
+    filter: grayscale(0.3);
+  }
+  
+  .client-logo-hover:hover {
+    filter: grayscale(0);
+  }
+
+  /* Progress indicators */
+  .progress-indicator {
+    @apply w-full h-2 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .progress-bar {
+    @apply h-full bg-gradient-primary rounded-full;
+    animation: progressLoad 2s ease-out forwards;
+  }
+
+  /* Section dividers with gradient */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(36, 84, 60, 0.3), transparent);
+  }
+
+  /* Enhanced form styling */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary;
+    @apply transition-all duration-200;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  /* Navigation enhancements */
+  .nav-link {
+    @apply text-foreground/60 hover:text-foreground transition-colors duration-200;
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0;
+    @apply after:bg-primary after:transition-all after:duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply after:w-full;
+  }
+
+  /* Service card enhancements */
+  .service-card {
+    @apply relative overflow-hidden rounded-xl p-6;
+    @apply bg-card border border-border/50;
+    @apply transition-all duration-300 hover:shadow-lg;
+    @apply hover:border-primary/20 hover:bg-card/80;
+  }
+
+  /* Contact info styling */
+  .contact-info {
+    @apply flex items-start space-x-4 p-4 rounded-lg;
+    @apply bg-card/50 border border-border/50;
+    @apply transition-all duration-200 hover:bg-card/80;
+  }
+
+  /* Footer styling */
+  .footer-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  /* Social media icons */
+  .social-icon {
+    @apply text-muted-foreground hover:text-primary transition-colors duration-200;
+    @apply hover:scale-110 transform;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .footer-divider {
+    @apply border-t-[1.8px] border-white mt-0 mb-6 bg-[#a0c067];
+  }
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes progressLoad {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
