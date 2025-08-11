@@ -690,8 +690,8 @@ const Index = () => {
             </Card>
           </div>
           
-          <div className="text-center mt-12">
-            <Link to="/contact" className="btn-primary mr-4 inline-flex items-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/contact" className="btn-primary inline-flex items-center">
               Schedule Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link to="/contact" className="btn-primary inline-flex items-center">
